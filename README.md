@@ -28,3 +28,9 @@ Use MSALigFastatoJson.py
 ```
 python3 MSALigFastatoJson.py [fasta] [msa.a3m] [Ligand1.txt] [Ligand2.txt]
 ```
+
+## 5 Convert a fasta file into individual json files and add one ligand
+Use LigFastatoJson.py 
+```
+python3 LigFastatoJson.py [fasta] [Ligand.txt]
+```
