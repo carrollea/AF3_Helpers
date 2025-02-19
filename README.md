@@ -2,35 +2,31 @@
 Some helpful scripts for prepping files for alphafold3
 
 Convert a fasta file into a json file. 
-These scripts can convert one fasta file with multiple protein sequences into multiple json files, one for each protein sequence. 
-I've split these into multiple scripts because I don't have time to make one program for all of them. Maybe I'll fix this later. 
+The following python code converts a fasta file into a json file that can be used in Alphafold3
+Use AF3_json_Prep.py 
 
-## 1 Convert a fasta file into individual json files 
-Use the FastatoJson.py in the command line. 
 ```
-python3 FastatoJson.py [fasta]
+python3 AF3_json_Prep.py -f [fasta] -m [msa.a3m] -l [Ligand.txt]
 ```
 
-## 2 Convert a fasta file and an msa file into json files
-Use MSAFastatoJson.py 
+### Inputs 
+
+#### -f fasta file 
+This can be a fasta file containing one or more protein files. If more than one protein is in the fasta file then a json file will be made for each protein. 
+
+#### -m msa.a3m 
+If you want to provide a msa for your protein then you can pass the -m flag with the msa in .a3m format. If your fasta file has multiple proteins then your msa can have multiple msa for each protein. If the ID is the same in both the fasta and msa file then a json file for each protein along with the corresponding msa will be made. 
+
+#### -l Ligand.txt 
+The ligands can be provided in a txt file containing an ID ligand in smiles format. 
+
 ```
-python3 MSAFastatoJson.py [fasta] [msa.a3m]
+b  CC(=O)[C@H]3CCC4C2CC=C1C[C@@H](O)CC[C@]1(C)C2CC[C@]34C
 ```
 
-## 3 Convert a fasta file, msa file, and one ligand into json files
-Use MSALigFastatoJson.py 
-```
-python3 MSALigFastatoJson.py [fasta] [msa.a3m] [Ligand.txt]
-```
+If you want multiple ligands in the json file then each line should contain a new ID and smile. 
 
-## 4 Convert a fasta file, msa file and two ligands into json files
-Use MSALigFastatoJson.py
 ```
-python3 MSALigFastatoJson.py [fasta] [msa.a3m] [Ligand1.txt] [Ligand2.txt]
-```
-
-## 5 Convert a fasta file into individual json files and add one ligand
-Use LigandFastatoJson.py 
-```
-python3 LigandFastatoJson.py [fasta] [Ligand.txt]
+b  CC(=O)[C@H]3CCC4C2CC=C1C[C@@H](O)CC[C@]1(C)C2CC[C@]34C
+c  'CC(=O)[C@H]3CC[C@]4(O)C2CC=C1C[C@@H](O)CC[C@]1(C)C2CC[C@]34C
 ```
