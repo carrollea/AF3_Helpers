@@ -4,10 +4,7 @@ import json
 import re
 import Bio
 from Bio import SeqIO
-#Note: biopython installed on our lab anaconda
-#Can load by using the following in the command line before using the program
-#module use -a /projects/academic/zhenw/programs/modulefiles/Allluas
-#module load anaconda3
+
 #Setting up inputs
 parser = argparse.ArgumentParser()
 
