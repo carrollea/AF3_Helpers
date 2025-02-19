@@ -18,15 +18,15 @@ This can be a fasta file containing one or more protein files. If more than one 
 If you want to provide a msa for your protein then you can pass the -m flag with the msa in .a3m format. If your fasta file has multiple proteins then your msa can have multiple msa for each protein. If the ID is the same in both the fasta and msa file then a json file for each protein along with the corresponding msa will be made. 
 
 #### -l Ligand.txt 
-The ligands can be provided in a txt file containing an ID ligand in smiles format. 
+The ligands can be provided in a txt file containing an ID ligand in smiles format. IDs should be uppercase.
 
 ```
-b  CC(=O)[C@H]3CCC4C2CC=C1C[C@@H](O)CC[C@]1(C)C2CC[C@]34C
+B  CC(=O)[C@H]3CCC4C2CC=C1C[C@@H](O)CC[C@]1(C)C2CC[C@]34C
 ```
 
 If you want multiple ligands in the json file then each line should contain a new ID and smile. 
 
 ```
-b  CC(=O)[C@H]3CCC4C2CC=C1C[C@@H](O)CC[C@]1(C)C2CC[C@]34C
-c  'CC(=O)[C@H]3CC[C@]4(O)C2CC=C1C[C@@H](O)CC[C@]1(C)C2CC[C@]34C
+B  CC(=O)[C@H]3CCC4C2CC=C1C[C@@H](O)CC[C@]1(C)C2CC[C@]34C
+C  'CC(=O)[C@H]3CC[C@]4(O)C2CC=C1C[C@@H](O)CC[C@]1(C)C2CC[C@]34C
 ```
